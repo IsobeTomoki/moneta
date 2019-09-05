@@ -19,6 +19,16 @@
     <v-btn id="btn" class="orange" fab dark large>
       {{ account.total | yen }}
     </v-btn>
+    <v-btn 
+        id="statement-btn2"
+        to="/"
+        class="mx-4"
+        nuxt
+        rounded
+        color="blue"
+        @click="transfer">
+      TOPへ戻る
+    </v-btn>
   </div>
 </template>
 
@@ -29,6 +39,11 @@ export default {
   middleware: "login",
   computed: {
     ...mapGetters("login", ["account"]),
+  },
+  methods:{
+    transfer(){
+      this.$router.push("/");
+    }
   },
 };
 </script>
@@ -86,6 +101,14 @@ export default {
   grid-column: 2;
   font-size: 24px;
   color: orange;
+  text-decoration: none;
+  z-index: 5;
+}
+#statement-btn2 {
+  grid-row: 25;
+  grid-column:2;
+  font-size: 20px;
+  color: white;
   text-decoration: none;
   z-index: 5;
 }

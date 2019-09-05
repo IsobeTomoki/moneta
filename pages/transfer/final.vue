@@ -1,28 +1,13 @@
 <template>
   <v-card class="mt-4 elevation-12">
     <v-toolbar dark color="primary">
-      <v-toolbar-title>振込金額を入力して下さい</v-toolbar-title>
+      <v-toolbar-title>振込が完了しました。</v-toolbar-title>
     </v-toolbar>
     <v-card-text>
-      <v-form v-model="valid">
-        <v-text-field
-          name="金額"
-          label="金額"
-          type="number"
-          :value="amount"
-          :rules="[v => ((v < account.total - fee && v > 0) && Number.isInteger(v) == true) || '残高が不足しています、または不正な金額です.']"
-          @input="$store.commit('transfer/amount', $event)"
-        />
-        <v-btn nuxt dark color="primary" @click="transfer2">
-          TOPへ戻る
-        </v-btn>
-        <v-btn nuxt dark to="account" color="primary">
-          戻る
-        </v-btn>
-        <v-btn nuxt dark to ="final" color="primary" :disabled="!valid" @click="transfer">
-          振込実行
-        </v-btn>
-      </v-form>
+      <v-btn nuxt dark color="primary" @click="transfer">
+        終了
+      </v-btn>
+      
     </v-card-text>
   </v-card>
 </template>
@@ -45,9 +30,6 @@ export default {
       this.transferTo();
       this.$router.push("/");
     },
-    transfer2() {
-      this.$router.push("/");
-    },
     transferFrom() {
       let total = this.account.total;
       total -= this.fee;
@@ -64,13 +46,6 @@ export default {
       this.$store.dispatch("transfer/receiveTransfer", total);
       this.$store.dispatch("transfer/addStatementReceiveTransfer", total);
     },
-    transfercheck(){
-      if (this.account == this.$store.getters["transfer/account"]){
-        True;
-      }else{
-        False;
-      }
-    }
   },
 };
 </script>
