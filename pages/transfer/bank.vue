@@ -12,6 +12,9 @@
           :value="bankId"
           @input="$store.commit('transfer/bankId', $event)"
         />
+        <v-btn nuxt dark color="primary" @click="transfer">
+          戻る
+        </v-btn>
         <v-btn nuxt dark to="branch" color="primary" :disabled="!bankId">
           次へ
         </v-btn>
@@ -27,6 +30,11 @@ export default {
   computed: {
     ...mapGetters("banks", ["banks"]),
     ...mapGetters("transfer", ["bankId"]),
+  },
+  methods:{
+    transfer(){
+      this.$router.push("/");
+    },
   },
 };
 </script>
