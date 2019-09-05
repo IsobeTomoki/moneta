@@ -17,7 +17,7 @@
         <v-btn nuxt dark to="branch" color="primary">
           戻る
         </v-btn>
-        <v-btn nuxt dark to="amount" color="primary" :disabled="!branchId">
+        <v-btn nuxt dark to="amount" color="primary" :disabled="!accountId">
           次へ
         </v-btn>
       </v-form>

@@ -7,7 +7,6 @@
       <v-btn nuxt dark color="primary" @click="transfer">
         終了
       </v-btn>
-      
     </v-card-text>
   </v-card>
 </template>

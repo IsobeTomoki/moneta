@@ -5,12 +5,13 @@ import pluralize from "pluralize";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: "AIzaSyDLIbhYxnQgFYEVELcec20pbN78umBG9dg",
-    authDomain: "moneta-f39eb.firebaseapp.com",
-    databaseURL: "https://moneta-f39eb.firebaseio.com",
-    projectId: "moneta-f39eb",
-    storageBucket: "moneta-f39eb.appspot.com",
-    messagingSenderId: "450912157988",
+    apiKey: "AIzaSyDXEdgDM7sxK1MSp0gyzuoyo08PMyDyr88",
+    authDomain: "moneta-e4f2a.firebaseapp.com",
+    databaseURL: "https://moneta-e4f2a.firebaseio.com",
+    projectId: "moneta-e4f2a",
+    storageBucket: "",
+    messagingSenderId: "251368168453",
+    appId: "1:251368168453:web:52eab046e781596aa4d06c"
   });
 }
 
